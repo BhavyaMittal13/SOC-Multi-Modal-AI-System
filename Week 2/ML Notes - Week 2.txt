@@ -1,0 +1,125 @@
+﻿ML Notes — Week 2
+Topics: Data Preprocessing, Linear Regression, Train-Test Split, Evaluation Metrics
+________________
+
+
+The ML Workflow in Code
+This week I actually ran through the full workflow:
+Raw Data
+  ↓
+Inspect (df.info(), df.describe(), df.isnull())
+  ↓
+Clean (handle nulls, fix outliers, encode categories)
+  ↓
+Feature Engineering (add useful columns, scale features)
+  ↓
+Train-Test Split (80/20 typically)
+  ↓
+Choose Model (LinearRegression for now)
+  ↓
+Fit Model (.fit(X_train, y_train))
+  ↓
+Evaluate (MAE, RMSE, R² on test set)
+  ↓
+Interpret / Improve
+
+
+________________
+
+
+Pandas — My Key Commands
+df.shape                      # (rows, cols)
+df.info()                     # dtypes + non-null count
+df.describe()                 # stats for numeric columns
+df.isnull().sum()             # missing values per column
+df["col"].fillna(val)         # fill missing values
+df[df["col"] > 5]             # filter rows
+df.groupby("col").mean()      # aggregate
+df.sort_values("col")         # sort
+pd.get_dummies(df, columns=["cat_col"])  # one-hot encode
+
+
+________________
+
+
+Linear Regression
+What it does: Finds the best-fit line through data points.
+Formula: y = w₁x₁ + w₂x₂ + ... + b
+How it learns: Minimizes the Mean Squared Error (MSE) between predictions and actual values. The math behind this is "Ordinary Least Squares" — there's a closed-form solution. (For neural networks, we'll need gradient descent.)
+Key insight: The coefficients tell you directly how much each feature matters.
+* If coef(area) = 60, then adding 1 sqft increases price by ₹60k.
+* If coef(age) = -2000, then each year older decreases price by ₹2000.
+Assumptions of Linear Regression (I need to understand these better):
+1. Linear relationship between X and y
+2. Errors are normally distributed
+3. No multicollinearity (features shouldn't be highly correlated with each other)
+4. Homoscedasticity (equal variance of errors)
+________________
+
+
+Train-Test Split
+Why: If you test on training data, the model has "seen" all the answers. It's like giving a student the exam paper beforehand and being surprised they scored 100%.
+Rule: Never touch test data until the very end.
+Typical ratios: 80/20 or 70/30 (training/test)
+Cross-validation: Better than a single split — splits the data K ways and averages the result. More reliable estimate of true performance.
+________________
+
+
+Evaluation Metrics
+Metric
+	Formula
+	Good when...
+	MAE
+	mean(
+	actual - pred
+	MSE
+	mean((actual - pred)²)
+	Large errors are especially bad
+	RMSE
+	√MSE
+	Same units as target, large-error-sensitive
+	R²
+	1 - SS_res/SS_tot
+	You want a 0-1 normalized score
+	R² intuition:
+* R² = 1.0 → perfect predictions
+* R² = 0.0 → model is as good as always predicting the mean
+* R² < 0 → model is worse than the mean — something is very wrong
+________________
+
+
+Quick Code Reference
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, r2_score
+import numpy as np
+
+
+# Split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+
+# Train
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+
+# Predict
+y_pred = model.predict(X_test)
+
+
+# Evaluate
+print("MAE:", mean_absolute_error(y_test, y_pred))
+print("R²:", r2_score(y_test, y_pred))
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+
+
+________________
+
+
+Resources Used This Week
+* scikit-learn documentation (LinearRegression, train_test_split)
+* Kaggle Learn: Pandas course (completed 4/6 lessons)
+* StatQuest YouTube (Josh Starmer) — Linear Regression and R² videos (very clear!)
+* Hands-On ML Chapter 4 (Linear Models)

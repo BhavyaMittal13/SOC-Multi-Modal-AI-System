@@ -1,0 +1,46 @@
+﻿Week 2 — Machine Learning Basics
+🎯 Week Objectives
+* Understand the end-to-end ML workflow with real code
+* Get comfortable with Pandas for data manipulation
+* Learn data cleaning techniques (missing values, outliers)
+* Implement Linear Regression using scikit-learn
+* Understand and apply train-test split
+* Evaluate models using MAE, MSE, and R² Score
+________________
+
+
+📚 Topics Covered
+Topic
+	File
+	Pandas DataFrames, Series, operations
+	pandas_basics.py
+	Handling nulls, encoding, outliers
+	data_cleaning.py
+	Linear Regression from scratch + sklearn
+	linear_regression.py
+	Why and how to split data
+	train_test_split_demo.py
+	MAE, MSE, R² explained with code
+	model_evaluation.py
+	Week concepts and notes
+	ml_notes.md
+	________________
+
+
+📝 Summary of Learning
+This week felt like the real beginning of ML. We finally wrote code that trains a model! Key things that clicked:
+* Pandas is like a spreadsheet inside Python. head(), describe(), isnull() — these three alone are incredibly useful.
+* Train-test split is one of those things that seems obvious once you understand it but is crucial to get right. You can never evaluate a model on data it was trained on.
+* Linear Regression is surprisingly interpretable. The coefficients directly tell you "if X increases by 1, Y increases by coef".
+* R² Score confused me at first. An R² of 0.85 means the model explains 85% of the variance in the data. Negative R² means the model is worse than just predicting the mean every time.
+One thing I struggled with: understanding what "normalization" actually does mathematically. I get that it scales features to similar ranges, but I'm not fully sure why it always helps. Will dig deeper.
+________________
+
+
+💡 Key Takeaways
+1. Data cleaning takes more time than modeling — real datasets are messy.
+2. Always check df.info() and df.describe() before doing anything with data.
+3. Never evaluate a model on training data.
+4. Linear Regression works well when the relationship between variables is actually linear.
+5. R² > 0.8 is generally considered a good fit for simple regression problems.
+6. Overfitting = great training score, poor test score. Always compare both.
