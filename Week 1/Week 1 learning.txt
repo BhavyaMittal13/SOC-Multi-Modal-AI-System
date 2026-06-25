@@ -1,0 +1,30 @@
+﻿Week 1 — Python Basics + Introduction to Machine Learning (Theory)
+🎯 Week Objectives
+* Set up Python environment (VS Code + pip)
+* Get comfortable with Python syntax
+* Understand variables, data types, lists, dictionaries
+* Write basic control flow (loops, conditions)
+* Define and use functions
+* Complete a mini-project to apply everything
+* Read introductory ML theory (no code yet)
+________________
+
+
+📝 Summary of Learning
+This was my first proper week with Python (I had done a little bit before but nothing structured). The biggest things that clicked:
+* Python doesn't need semicolons or type declarations — it's a lot more readable.
+* Lists and dictionaries are incredibly useful. I kept wanting to use them for everything.
+* Functions took a little while to understand (especially return vs print), but once it clicked it made sense.
+* The ML theory reading was eye-opening. I didn't realize how many everyday things (spam filters, recommendation systems) are ML.
+I made some mistakes along the way — for example I forgot that range(n) goes from 0 to n-1, not 1 to n. That caused a bug in my loop which I've left in the file as a comment to remind myself.
+________________
+
+
+
+
+Key Takeaways
+1. Python is beginner-friendly but there's a lot of depth below the surface.
+2. len(), append(), pop(), keys(), values() — these four/five methods cover 90% of what I needed.
+3. Functions make code reusable — I could have used them in Week 0 if I'd known!
+4. ML is all about finding patterns in data. The computer doesn't "understand" — it optimizes.
+5. Supervised vs unsupervised learning: the key difference is whether labels exist.
