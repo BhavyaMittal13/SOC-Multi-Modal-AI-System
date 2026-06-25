@@ -1,0 +1,123 @@
+﻿ML Theory Notes — Week 1
+________________
+
+
+What is Machine Learning?
+Machine Learning (ML) is a subset of Artificial Intelligence where we don't program the computer with explicit rules. Instead, we give it data, and it learns patterns from that data to make predictions or decisions.
+Traditional programming:
+Data + Rules → Computer → Output
+
+
+Machine Learning:
+Data + Output (labels) → Computer → Rules (model)
+
+
+The computer figures out the "rules" (i.e., the model) by itself. That's the mind-blowing part.
+________________
+
+
+Why ML? Why Now?
+Three things came together in the last decade:
+1. More data — the internet generates massive amounts of data
+2. More compute — GPUs are very fast at matrix operations
+3. Better algorithms — research has made models much more effective
+________________
+
+
+Types of Machine Learning
+1. Supervised Learning
+* You have labeled data (input → known output)
+* The model learns a mapping from input to output
+* Examples:
+   * Predicting house prices (input: size, location → output: price)
+   * Email spam detection (input: email text → output: spam/not spam)
+   * Image classification (input: image → output: cat/dog/etc.)
+2. Unsupervised Learning
+* You have unlabeled data (no known outputs)
+* The model finds hidden structure/patterns in the data
+* Examples:
+   * Customer segmentation (group customers by behavior)
+   * Topic modeling (find themes in documents)
+   * Anomaly detection (find unusual patterns)
+3. Reinforcement Learning
+* An agent interacts with an environment
+* Gets rewards for good actions, penalties for bad ones
+* Learns to maximize total reward over time
+* Examples:
+   * Game-playing AI (AlphaGo, chess engines)
+   * Robot navigation
+   * Self-driving cars (partially)
+________________
+
+
+The ML Workflow (high level)
+1. Collect data — you need raw data (the more the better)
+2. Preprocess data — clean it, handle missing values, normalize
+3. Split data — separate into training set and test set
+4. Choose model — pick an algorithm suitable for the task
+5. Train model — fit the model on training data
+6. Evaluate model — check how well it performs on test data
+7. Improve — tune hyperparameters, add more data, try different models
+8. Deploy — put the model in production for real use
+________________
+
+
+Key Terminology
+Term
+	Meaning
+	Feature
+	An input variable (e.g., house size, age, temperature)
+	Label / Target
+	The output variable we're trying to predict
+	Training data
+	Data used to train the model
+	Test data
+	Data the model has never seen — used to evaluate performance
+	Model
+	The mathematical function that maps inputs to outputs
+	Parameters
+	Internal values the model learns (e.g., weights in linear regression)
+	Hyperparameters
+	Settings we set before training (e.g., learning rate)
+	Overfitting
+	Model performs great on training data but badly on new data
+	Underfitting
+	Model is too simple and performs badly even on training data
+	________________
+
+
+Common ML Algorithms (just names for now)
+* Linear Regression — predicting continuous values (Week 2)
+* Logistic Regression — binary classification (0 or 1)
+* Decision Trees — tree-based rules
+* Random Forests — ensemble of decision trees
+* Support Vector Machines (SVM) — finding a boundary between classes
+* K-Nearest Neighbors (KNN) — classify based on nearest data points
+* Neural Networks / Deep Learning — powerful, multi-layer models (Week 3)
+________________
+
+
+What is a Model?
+A model is a mathematical function that takes inputs and produces outputs.
+For example, linear regression is:
+y = w1*x1 + w2*x2 + ... + b
+
+
+Where w1, w2, ... are weights (parameters) and b is the bias. Training = finding the best w and b values.
+________________
+
+
+Interesting Applications
+* Healthcare: predicting diseases from patient data
+* Finance: fraud detection, stock price forecasting
+* NLP: language translation, chatbots (like the ones I'm using!)
+* Computer Vision: face recognition, autonomous driving
+* Recommendation: YouTube, Netflix, Spotify suggestions
+________________
+
+
+Resources Used
+* Coursera ML intro lectures (Andrew Ng, first 2 lessons)
+* Google ML Crash Course (Overview section)
+* Hands-On Machine Learning — Chapter 1 (skimmed)
+* Various YouTube videos (3Blue1Brown — really helped visualize gradients)
